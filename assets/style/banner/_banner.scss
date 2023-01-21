@@ -1,0 +1,133 @@
+.banner {
+   margin-top: 100px;
+
+
+   @include phone-xl {
+      background-color: $black-brown ;
+      margin: 0;
+   }
+
+   &__image-item {
+      width: 100%;
+   }
+
+   &__wrapper {
+      position: relative;
+
+      @include phone-xl {
+
+         display: flex;
+         flex-direction: column;
+ 
+      }
+
+   }
+
+   &__content {
+      max-width: 26%;
+      position: absolute;
+      left: 6%;
+      top: 20%;
+
+      @include desktop-xl {
+         max-width: 33%;
+
+      }
+
+      @media screen and (max-width:1220px) {
+         max-width: 45%;
+         top: 10%;
+      }
+
+      @include tablet {
+         max-width: 60%;
+         top: 20%;
+      }
+
+      @include phone-xl {
+         max-width: 70%;
+         top: 15%;
+      }
+
+      @include phone {
+         position: relative;
+         background-color: $black-brown;
+         left: 0;
+         top: 0;
+         margin: 40px auto;
+         display: flex;
+         flex-direction: column;
+         max-width: 90%;
+         text-align: center
+     
+      }
+   }
+
+   &__h1 {
+      @include title;
+      font-size: 3.2rem;
+      color: $white;
+
+      @include desktop-xl {
+         font-size: 3rem;
+      }
+
+      @include desktop-xs {
+         font-size: 2.5rem;
+      }
+
+      @include phone-xl {
+         font-size: 2rem;
+      }
+
+      @include phone {
+     margin: 0 auto;
+
+      }
+   }
+
+   &__description {
+      color: white;
+      font-family: $poppins;
+      font-weight: 200;
+      line-height: 120%;
+      font-size: 1.4rem;
+      margin: 30px 0;
+
+      @include desktop-xl {
+         font-size: 1.2rem;
+      }
+
+      @include desktop-xs {
+         margin: 10px 0
+      }
+
+      @include tablet {
+         margin: 20px 0;
+      }
+
+      @include phone-xl {
+         font-size: 1.2rem;
+      }
+
+      @include phone {
+         font-size: 1rem;
+
+      }
+
+   }
+
+   &__btn {
+      @include button;
+
+      @include phone-xl {
+         padding: 15px 10px;
+         font-size: 0.7rem;
+      }
+      @include phone{
+       font-size: 1rem;
+      }
+
+   }
+
+}

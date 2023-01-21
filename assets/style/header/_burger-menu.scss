@@ -1,0 +1,92 @@
+.burger-menu {
+	cursor: pointer;
+	height: 27px;
+	width: 27px;
+	overflow: visible;
+	position: relative;
+	opacity: 0;
+	z-index: 2;
+
+	@include desktop-xs {
+		opacity: 1;
+	}
+	@include phone-xl {
+	margin-left: 10px;
+	}
+
+
+
+
+	// THE LINES
+	span,
+	span:before,
+	span:after {
+		background: $black;
+		display: block;
+		height: 2px;
+		opacity: 1;
+		position: absolute;
+		-webkit-transition: 0.3s ease-in-out;
+		-o-transition: 0.3s ease-in-out;
+		transition: 0.3s ease-in-out;
+	}
+
+	span:before,
+	span:after {
+		content: '';
+	}
+
+	// TOP
+	span:before {
+		left: 0px;
+		top: -10px;
+		width: 27px;
+	}
+
+	// MIDDLE
+	span {
+		right: 0px;
+		top: 13px;
+		width: 27px;
+	}
+
+	// BOTTOM
+	span:after {
+		left: 0px;
+		top: 10px;
+		width: 27px;
+	}
+
+	// ROTATION ON CLICK
+	&.close {
+
+		// TOP
+		span:before {
+			top: 0px;
+			-webkit-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+			width: 27px;
+		}
+
+		// MIDDLE
+		span {
+			-webkit-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			top: 13px;
+			width: 27px;
+		}
+
+		// BOTTOM
+		span:after {
+			top: 0px;
+			left: 0;
+			-webkit-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+			opacity: 0;
+			width: 0;
+		}
+	}
+}

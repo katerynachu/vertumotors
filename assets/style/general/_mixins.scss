@@ -1,0 +1,305 @@
+@mixin container {
+    max-width: 85%;
+    margin: 0 auto;
+
+    @include desktop-xl {
+        max-width: 90%;
+    }
+
+    @include desktop-xs {
+        max-width: 94%;
+
+        @include phone-xl {
+            max-width: 98%;
+        }
+    }
+}
+
+@mixin title {
+    font-family: $poppins;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+@mixin button {
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 5px;
+    background-color: $blue-green;
+    border: none;
+    color: $black;
+    font-family: $openSans;
+    font-weight: 600;
+    font-size: 1rem;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::after,
+    &::before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        z-index: -1;
+        transition: all .8s linear;
+        height: 100%;
+        transform: skewX(45deg);
+        background: $black-brown;
+        top: 0;
+        left: -5%;
+    }
+
+    &::after {
+        left: auto;
+        right: -5%;
+    }
+
+    &:hover {
+        color: $white;
+        background: #0ae6cf;
+        transition: background .4s .15s;
+    }
+
+    &:hover:before,
+    &:hover:after {
+        width: 110%;
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+}
+
+// BLOCK STYLE
+
+@mixin wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width:1341px) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+@mixin content {
+    max-width: 50%;
+    padding: 70px 0;
+
+    @media screen and (max-width:1341px) {
+        max-width: 100%;
+    }
+
+
+
+
+}
+
+@mixin image-item {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 2%;
+
+    @media screen and (max-width:1341px) {
+        max-width: 80%;
+    }
+
+    @include tablet {
+        max-width: 100%;
+    }
+}
+
+@mixin description {
+    margin: 30px 0;
+    font-family: $roboto;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 155%;
+
+    @include desktop-xs {
+        margin: 10px 0;
+    }
+}
+
+@mixin number-style {
+    font-family: $lato;
+    font-weight: 700;
+    font-size: 3rem;
+
+    @include desktop-xl {
+        font-size: 2.3rem;
+    }
+
+    @media screen and (max-width:1341px) {
+        font-size: 3.2rem;
+    }
+    @include phone{
+       font-size: 2rem;
+        }
+}
+
+// MEDIA
+@mixin phone-xs {
+    @media only screen and (max-width: 506px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media only screen and (max-width: 553px) {
+        @content;
+    }
+}
+
+@mixin phone-xl {
+    @media only screen and (max-width: 781px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (max-width: 988px) {
+        @content;
+    }
+}
+
+
+@mixin desktop-xs {
+    @media only screen and (max-width: 1477px) {
+        @content;
+    }
+}
+
+@mixin desktop-xl {
+    @media only screen and (max-width: 1761px) {
+        @content;
+    }
+}
+
+// ANIMATION
+
+@mixin animate-bounce {
+    @keyframes bounce {
+        0% {
+            bottom: 0;
+        }
+
+        100% {
+            bottom: 5px;
+        }
+    }
+}
+
+@mixin animate-shake {
+    @keyframes shake {
+        0% {
+            transform: translate(1px, 1px) rotate(0deg);
+        }
+
+        10% {
+            transform: translate(-1px, -2px) rotate(-1deg);
+        }
+
+        20% {
+            transform: translate(-3px, 0px) rotate(1deg);
+        }
+
+        30% {
+            transform: translate(3px, 2px) rotate(0deg);
+        }
+
+        40% {
+            transform: translate(1px, -1px) rotate(1deg);
+        }
+
+        50% {
+            transform: translate(-1px, 2px) rotate(-1deg);
+        }
+
+        60% {
+            transform: translate(-3px, 1px) rotate(0deg);
+        }
+
+        70% {
+            transform: translate(3px, 1px) rotate(-1deg);
+        }
+
+        80% {
+            transform: translate(-1px, -1px) rotate(1deg);
+        }
+
+        90% {
+            transform: translate(1px, 2px) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(1px, -2px) rotate(-1deg);
+        }
+    }
+
+}
+
+@mixin animate-rotate {
+    @keyframes rotate {
+        0% {
+            transform: rotateY(1deg);
+            ;
+        }
+
+        10% {
+            transform: rotateY(36deg);
+            ;
+        }
+
+        20% {
+            transform: rotateY(72deg);
+            ;
+        }
+
+        30% {
+            transform: rotateY(106deg);
+            ;
+        }
+
+        40% {
+            transform: rotateY(132deg);
+            ;
+        }
+
+        50% {
+            transform: rotateY(168deg);
+            ;
+        }
+
+        60% {
+            transform: rotateY(202deg);
+            ;
+        }
+
+        70% {
+            transform: rotateY(238deg);
+            ;
+        }
+
+        80% {
+            transform: rotateY(272deg);
+            ;
+        }
+
+        90% {
+            transform: rotateY(316deg);
+            ;
+        }
+
+        100% {
+            transform: rotateY(360deg);
+            ;
+        }
+    }
+
+}

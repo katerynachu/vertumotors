@@ -1,0 +1,112 @@
+.navigation {
+    display: flex;
+    gap: 30px;
+
+    @include desktop-xl {
+        gap: 20px;
+    }
+
+    @include desktop-xs {
+        gap: 40px;
+        flex-direction: row-reverse;
+    }
+
+    @include phone-xl {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    &__search {
+        cursor: pointer;
+        background-color: $light-grey;
+        border: 2px solid transparent;
+        width: 400px;
+        border-radius: 25px;
+        padding: 0 15px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        transition: background-color 0.5s ease, border 1s linear;
+
+        &:hover {
+            background-color: $white;
+            border: 2px solid $light-grey;
+
+        }
+
+        @include desktop-xl {
+            width: 250px;
+        }
+
+        @include desktop-xs {
+            width: 480px;
+        }
+
+        @include tablet {
+            max-width: 300px;
+        }
+
+        @include phone-xl {
+            background-color: transparent;
+            border: transparent;
+            border-radius: 0;
+            width: 50px;
+            padding: 0;
+        }
+
+
+    }
+
+}
+
+.search {
+
+    &__input {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        width: 80%;
+
+        &::placeholder {
+            color: $grey;
+        }
+
+        @include phone-xl {
+            display: none;
+        }
+    }
+
+    &__svg {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 25%;
+        fill: $grey;
+    }
+
+    &__svg--search {
+        left: 15px;
+
+        @include phone-xl {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            fill: $black;
+
+            &:hover {
+                fill: $blue-green;
+            }
+        }
+
+    }
+
+    &__svg--micro {
+        right: 15px;
+
+        @include phone-xl {
+            display: none;
+        }
+    }
+}

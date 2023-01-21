@@ -1,0 +1,191 @@
+.info {
+    padding: 100px 0;
+    background-color: $black-brown ;
+
+    @include desktop-xl {
+        padding: 50px;
+
+    }
+
+    @include phone {
+        padding: 0;
+    }
+
+    &__container {
+        @include container;
+
+        @include phone {
+            max-width: 100%;
+        }
+    }
+
+    &__wrapper {
+        @include wrapper;
+    }
+
+    &__image-item {
+        @include image-item;
+    }
+
+    &__content {
+        @include content;
+        padding: 25px 0;
+        padding-left: 100px;
+
+        @include desktop-xl {
+            padding-left: 70px;
+
+        }
+
+        @media screen and (max-width:1341px) {
+            max-width: 80%;
+            margin: 30px auto;
+            padding: 0;
+        }
+
+        @include phone {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0;
+            max-width: 100%;
+            margin: 0 15px 0 15px;
+
+        }
+    }
+
+    &__title {
+        @include title;
+        font-size: 3rem;
+        color: $white;
+        max-width: 98%;
+
+        @include desktop-xl {
+            max-width: 100%;
+            font-size: 2.4rem;
+        }
+
+        @include desktop-xs {
+            font-size: 2rem;
+        }
+
+        @media screen and (max-width:1341px) {
+            max-width: 100%;
+            font-size: 3.4rem;
+        }
+
+        @include tablet {
+            font-size: 2.4rem;
+        }
+
+        @include phone {
+            font-size: 1.9rem;
+            text-align: left;
+        }
+    }
+
+    &__description {
+        @include description;
+        color: $white;
+        max-width: 90%;
+
+        @include desktop-xl {
+            margin: 15px 0;
+        }
+
+        @media screen and (max-width:1341px) {
+            max-width: 70%;
+            margin: 30px auto;
+            font-size: 1.6rem;
+        }
+
+        @include tablet {
+            font-size: 1.2rem;
+        }
+
+        @include phone {
+            margin: 10px 0;
+            height: 115px;
+            max-width: 100%;
+            font-size: 1.1rem;
+            overflow: auto;
+            text-align: left
+        }
+
+    }
+
+    &__btn {
+        @include button;
+
+        @media screen and (max-width:1341px) {
+            padding: 25px 30px;
+            font-size: 1.2rem;
+        }
+
+        @include tablet {
+            padding: 15px 25px;
+            font-size: 1rem;
+        }
+    }
+
+    &__text {
+        max-width: 61%;
+        display: flex;
+        justify-content: space-between;
+        color: $white;
+
+        @include desktop-xl {
+            max-width: 90%;
+        }
+
+        @include phone {
+            justify-content: flex-start;
+        }
+
+
+        @media screen and (max-width:1341px) {
+            max-width: 55%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+
+        @include tablet {
+            max-width: 85%;
+        }
+
+        @include phone {
+            max-width: 100%;
+            text-align: left;
+        }
+
+        .info__text {
+            &__number {
+                @include number-style;
+            }
+
+            &__desc {
+                @include description;
+                max-width: 75%;
+                margin: 15px 0;
+
+                @include desktop-xl {
+                    max-width: 90%;
+                }
+
+                @media screen and (max-width:1341px) {
+                    font-size: 1.2rem;
+                }
+
+                @include tablet {
+                    font-size: 1rem;
+                    max-width: 90%;
+                }
+
+            }
+
+            &__desc--small {
+                max-width: 100%;
+            }
+        }
+    }
+}

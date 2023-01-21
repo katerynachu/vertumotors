@@ -1,0 +1,27 @@
+@import './general/variables';
+@import './general/mixins';
+
+@import './general/main';
+
+// HEADER
+@import './header/header';
+@import './header/nav';
+@import './header/navigation';
+@import './header/navigation-icons';
+
+// BURGER-MENU
+@import './header/burger-menu';
+
+// BANNER
+@import './banner/banner';
+// CARDS
+@import './cards/trims';
+
+// REQUEST VIDEO
+@import './block-request/_block-request.scss';
+
+// INFO
+@import './info/info.scss'
+
+
+
