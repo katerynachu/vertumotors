@@ -34,6 +34,11 @@
             background-color: $white;
             border: 2px solid $light-grey;
 
+            @include phone-xl{
+                background-color: transparent;
+                border: unset;
+            }
+
         }
 
         @include desktop-xl {
@@ -50,7 +55,7 @@
 
         @include phone-xl {
             background-color: transparent;
-            border: transparent;
+            border: unset;
             border-radius: 0;
             width: 50px;
             padding: 0;
